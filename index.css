@@ -1,17 +1,22 @@
 .container {
+  display:  grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+.calculator {
     display: grid;
-    grid-template-columns: repeat(3, 50px);
-    grid-template-rows: repeat(6,30px);
-    grid-gap: 2px;
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(7,30px);
+    gap: 2px;
   }
   
   #expression, #result {
-    grid-column: 1/4;
+    grid-column: 1/5;
     border: solid 1px;
   }
   #buttons {
     display: grid;
-    grid-template-columns: repeat(3, 50px);
+    grid-template-columns: repeat(4, 50px);
     grid-template-rows: repeat(6,30px);
     grid-gap: 2px;
   }
