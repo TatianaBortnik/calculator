@@ -1,5 +1,5 @@
 html {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 body {
@@ -13,7 +13,6 @@ body {
   grid-template-columns: repeat(3,1fr);
   gap: 1rem;
   min-width: 900px;
-
 }
 
 .column {
@@ -22,7 +21,8 @@ body {
   padding: 0.5rem;
   align-items: center;
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
 }
 
 .season, .maximum {
@@ -85,7 +85,6 @@ body {
   .container {
     grid-template-columns: 1fr;
     margin: 5%;
-    font-size: 1.5em;
   }
   .column {
     padding: 5%
