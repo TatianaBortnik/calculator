@@ -1,8 +1,3 @@
-
-const buttons = document.getElementById('buttons');
-const expression_field = document.getElementById('expression');
-const result_field = document.getElementById('result');
-
 // global variables for Calculator
 var expression = '';
 var isResult = false;
@@ -11,12 +6,41 @@ var numb = 0;
 var expr = [];
 
 
+function getSeason() {
+
+    const season = ['winter', 'spring', 'summer', 'autumn'];
+    const month = ['December','January','February','March','April','May','June','July','August','September','October','November'];
+    const result = document.getElementById("resultSeason");
+
+    let monthNumber = document.getElementById("month_number").value;
+
+    monthNumber = (monthNumber == 12) ? 0 : monthNumber;
+    let seasonNumber = parseInt(monthNumber/3);
+    let article = (seasonNumber==3) ? ' is an ' : ' is a ';
+        
+    result.innerHTML =  month[monthNumber] + article + season[seasonNumber] +' month'
+    
+}
+
+
+function getMaximum() {
+
+    const result= document.getElementById("resultMax");
+    const numb1 = document.getElementById("first_number").value;
+    const numb2 = document.getElementById("second_number").value;
+    const numb3 = document.getElementById("third_number").value;
+
+    let max = (numb1 > numb2 ) ? numb1 : numb2;
+    max = (max < numb3) ? numb3 : max;
+
+    result.innerHTML = 'MAX('+ numb1 + ', '+ numb2 + ', ' +numb3 +') = '+ max;
+}
+
+
 function calculateExpression (array) {
 
     let arr = array;
     let operIndex = 0;
-
-    console.log(arr);
 
     // do multiplication or division 
     operIndex = arr.findIndex(element => element=='*' || element=='/');
@@ -48,7 +72,10 @@ function calculateExpression (array) {
 }
 
 // event for all buttons of Calculator
-buttons.addEventListener('click', (event) => {
+document.getElementById('buttons').addEventListener('click', (event) => {
+
+    const expression_field = document.getElementById('expression');
+    const result_field = document.getElementById('result');
 
     if (event.target.nodeName != 'BUTTON') {
       return;
@@ -100,8 +127,8 @@ buttons.addEventListener('click', (event) => {
                
             }
         }
-        expression_field.value = expression;
-        result_field.value = (result != 0) ?  result : '';
+        expression_field.innerHTML = expression;
+        result_field.innerHTML = (result != 0) ?  result : '';
     }
     
 })

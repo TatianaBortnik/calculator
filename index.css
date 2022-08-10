@@ -1,22 +1,103 @@
+
+
+body {
+  font-family:'Segoe UI', sans-serif;
+  font-size: 1.2rem;
+
+}
+
 .container {
   display:  grid;
   grid-template-columns: repeat(3,1fr);
   gap: 20px;
+  min-width: 900px;
+
 }
-.calculator {
+
+.column {
+  border: 1px black solid;
+  box-shadow: 5px 5px 5px 5px gray ;
+  padding: 10px;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.season {
+  display:grid;
+  grid-template-columns: 1fr;
+  row-gap: 10px;
+  justify-content: center;
+}
+
+.maximum {
+  display:grid;
+  grid-template-columns: 1fr;
+  row-gap: 10px;
+  justify-content: center;
+}
+
+input[type="number"] {
+  max-width: 100px;
+}
+
+.result {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.calc {
     display: grid;
-    grid-template-columns: repeat(4, 50px);
-    grid-template-rows: repeat(7,30px);
-    gap: 2px;
+    grid-template-columns: 1fr;
+    gap: 5px;
   }
   
-  #expression, #result {
-    grid-column: 1/5;
-    border: solid 1px;
-  }
   #buttons {
     display: grid;
-    grid-template-columns: repeat(4, 50px);
-    grid-template-rows: repeat(6,30px);
-    grid-gap: 2px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
   }
+
+  button {
+    height: 40px;
+    font-size: inherit;
+  }
+
+  input {
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  .frame {
+    border: 1px solid grey;
+    color: grey;
+    margin-top: .7rem;
+  }
+
+  .frame p {
+    background-color: white;
+    margin: -1rem .5rem 0.5rem .5rem;
+    width: fit-content;
+  }
+
+
+  
+
+ @media only screen and (max-device-width:500px) {
+  .container {
+    grid-template-columns: 1fr;
+    margin: 5%;
+    font-size: 1.5em;
+  }
+  .column {
+    padding: 5%
+  }
+  
+  button {
+    height: 70px;
+  }
+
+
+
+ }

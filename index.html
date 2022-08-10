@@ -8,22 +8,44 @@
         <h1>Lesson 10 homework</h1>
         <div class="container">
             
-            <div class="season">
+            <form class="column" onsubmit="getSeason(); return false;">
                 <h2>#1 Season</h2>
-                <label>Enter month number <input type="text" id="month_number"></label>
-                <button type="button" id="b1">Find out season</button>
-                
-            </div>
+                <div class="season">
+                    <label>Enter month number <input type="number" id="month_number" required min="1" max="12"></label>
+                    <button type="submit" id="bSeason">Get season</button>
+                    <div class="frame">
+                        <p>Result</p>
+                        <div id="resultSeason" class="result"></div>
+                    </div>
+                </div>
+            </form>
 
-            <div class="maximum">
+            <form class="column" onsubmit="getMaximum(); return false;">
                 <h2>#2 Maximum</h2>
-            </div>
+                <div class="maximum">
+                    <label>1st number <input type="number" id="first_number" required></label>
+                    <label>2nd number <input type="number" id="second_number" required></label>
+                    <label>3rd number <input type="number" id="third_number" required></label>
+                    <button type="submit" id="bMax">Get maximum</button>
+                    <div class="frame">
+                        <p>Result</p>
+                        <div id="resultMax" class="result"> </div>
+                    </div>
                     
-            <div>
+                </div>
+            </form>
+                    
+            <form class="column">
                 <h2>#3 Calculator</h2>
-                <div class="calculator">
-                    <input type="text" id="expression" readonly="true">
-                    <input type="text" id="result" readonly="true">
+                <div class="calc">
+                    <div class="frame">
+                        <p>Expression</p>
+                        <div id="expression" class="result"></div>
+                    </div>
+                    <div class="frame">
+                        <p>Result</p>
+                        <div id="result" class="result"></div>
+                    </div>
                     <div id="buttons">
                         <button type="button" id="b1">1</button>
                         <button type="button" id="b2">2</button>
@@ -38,12 +60,12 @@
                         <button type="button" id="b9">9</button>
                         <button type="button" id="b*">*</button> 
                         <button type="button" id="b0">0</button> 
-                        <button type="button" id="bClear">Clear</button>
+                        <button type="button" id="bClear">C</button>
                         <button type="button" id="b=">=</button>
                         <button type="button" id="b/">/</button>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </body>
     <script src="./index.js"></script>
