@@ -1,4 +1,6 @@
-
+html {
+  font-size: 20px;
+}
 
 body {
   font-family:'Segoe UI', sans-serif;
@@ -9,7 +11,7 @@ body {
 .container {
   display:  grid;
   grid-template-columns: repeat(3,1fr);
-  gap: 20px;
+  gap: 1rem;
   min-width: 900px;
 
 }
@@ -17,56 +19,48 @@ body {
 .column {
   border: 1px black solid;
   box-shadow: 5px 5px 5px 5px gray ;
-  padding: 10px;
+  padding: 0.5rem;
   align-items: center;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 3.5rem;
 }
 
-.season {
+.season, .maximum {
   display:grid;
   grid-template-columns: 1fr;
-  row-gap: 10px;
+  row-gap: 0.5rem;
   justify-content: center;
 }
 
-.maximum {
-  display:grid;
-  grid-template-columns: 1fr;
-  row-gap: 10px;
-  justify-content: center;
-}
 
-input[type="number"] {
-  max-width: 100px;
-}
-
-.result {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: black;
-}
 
 .calc {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 5px;
+    gap: .4rem;
   }
   
   #buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 5px;
+    grid-gap: .4rem;
   }
 
   button {
-    height: 40px;
+    height: 2rem;
     font-size: inherit;
   }
 
   input {
     font-family: inherit;
     font-size: inherit;
+    max-width: 100px;
+  }
+
+  .result {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: black;
   }
 
   .frame {
@@ -85,6 +79,9 @@ input[type="number"] {
   
 
  @media only screen and (max-device-width:500px) {
+  body {
+    font-size: 2rem;
+  }
   .container {
     grid-template-columns: 1fr;
     margin: 5%;
@@ -98,6 +95,8 @@ input[type="number"] {
     height: 70px;
   }
 
-
+  .result {
+    font-size: 2em;
+  }
 
  }
